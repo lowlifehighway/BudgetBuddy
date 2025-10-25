@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+@custom-variant hover (&:hover);
+@theme {
+  --color-primary: #c08ec5;
+  --color-primary-shade: #86638a;
+  --color-primary-tint: #c699cb;
+  --color-secondary: #3d2a4c;
+  --color-tahiti: #3ab7bf;
+  --color-bermuda: #78dcca;
+}
+input::placeholder {
+  opacity: 0.5;
+}
+/* For older WebKit browsers (Chrome, Safari) */
+input::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+/* For older Mozilla Firefox browsers */
+input::-moz-placeholder {
+  opacity: 0.5;
+}
+
+@layer {
+  .status-tabs-active {
+    @apply py-1 px-3 border-b-2 ease-in duration-300 cursor-pointer;
+  }
+  .status-tabs-inactive {
+    @apply py-1 px-3 border-b-2 border-transparent hover:border-[rgba(0,0,0,0.7)] ease-out duration-300 cursor-pointer;
+  }
+  .signup-login-label {
+    @apply bg-gray-200 rounded-md  w-sm flex items-center gap-2 px-4 py-2;
+  }
+  .signup-login-input {
+    @apply px-2 py-1 w-full focus:outline-none;
+  }
+}
+a {
+  cursor: pointer;
+}
+.gradient {
+  background: #3d2a4c;
+  background: -webkit-linear-gradient(
+    135deg,
+    rgba(61, 42, 76, 1) 16%,
+    rgba(192, 142, 197, 1) 52%,
+    rgba(255, 255, 255, 1) 93%
+  );
+  background: -moz-linear-gradient(
+    135deg,
+    rgba(61, 42, 76, 1) 16%,
+    rgba(192, 142, 197, 1) 52%,
+    rgba(255, 255, 255, 1) 93%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(61, 42, 76, 1) 16%,
+    rgba(192, 142, 197, 1) 52%,
+    rgba(255, 255, 255, 1) 93%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3D2A4C", endColorstr="#FFFFFF", GradientType=0);
+}
