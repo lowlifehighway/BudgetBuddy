@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
-// import api from '../api/axios.js';
-import axios from 'axios';
+import api from '../api/axios.js';
+// import axios from 'axios';
 
 export default function ProtectedRoute({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -10,9 +10,7 @@ export default function ProtectedRoute({ children }) {
     const verifyUser = async () => {
       try {
         // await api.get('/users/profile');
-        await axios.get('http://localhost:5000/users/auth', {
-          withCredentials: true,
-        });
+        await api.get('/users/auth');
         setIsAuthenticated(true);
       } catch (err) {
         setIsAuthenticated(false);
