@@ -7,9 +7,6 @@ function Aside({ topPad, budget, paymentData, totalSpent }) {
       className={`h-screen order-1 px-6 pb-10 bg-secondary grid grid-rows-2 gap-10 items-center`}
       style={{ paddingTop: topPad }}
     >
-      {/* <aside className="order-1 pt-20 bg-secondary">
-              <CircularProgress amount={500} total={1500} />
-            </aside> */}
       <div className="h-full aspect-square mx-auto">
         <CircularProgressbar
           value={(totalSpent / budget) * 100}
@@ -23,7 +20,7 @@ function Aside({ topPad, budget, paymentData, totalSpent }) {
           })}
         />
       </div>
-      <div className="w-full h-full min-h-96 flex items-center">
+      <div className="w-full h-full min-h-96 flex items-end">
         <Chart payment_data={paymentData} />
       </div>
     </aside>

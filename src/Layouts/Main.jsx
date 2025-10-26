@@ -4,9 +4,9 @@ import BudgetItem from '../Components/BudgetItem';
 import InputData from './InputData';
 
 function Main({
-  layout,
   paymentData,
   topOfListRef,
+  layout,
   search,
   setSearch,
   activeStatus,
@@ -23,7 +23,7 @@ function Main({
 
   return (
     <main
-      className="h-screen order-2 px-8 pt-20 "
+      className="h-screen order-2 px-8 pt-20"
       style={{ paddingTop: layout.topPad }}
     >
       <div className="flex justify-between items-center mb-4">
@@ -104,8 +104,8 @@ function Main({
         <li>Payment Status</li>
         <li>Amount</li>
       </ul>
-      <hr ref={topOfListRef} />
-      <div style={{ height: layout.listHeight }}>
+      <hr />
+      <div ref={topOfListRef} style={{ height: layout.listHeight }}>
         <BudgetItem payment_data={paymentData} />
       </div>
     </main>

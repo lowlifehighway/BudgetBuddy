@@ -21,6 +21,9 @@ input::-moz-placeholder {
 }
 
 @layer {
+  .header-nav-a {
+    @apply p-2 hover:bg-primary-shade duration-300  ease-in rounded-xl;
+  }
   .status-tabs-active {
     @apply py-1 px-3 border-b-2 ease-in duration-300 cursor-pointer;
   }

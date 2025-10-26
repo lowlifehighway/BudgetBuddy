@@ -26,25 +26,15 @@ function Header({ headerRef, username }) {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 w-full py-4 px-6 bg-primary text-white rounded-b-4xl flex justify-between font-medium items-center"
+      className="fixed top-0 w-full py-4 px-6 bg-primary text-white rounded-b-4xl flex justify-between font-medium items-center z-1"
     >
       <a onClick={handleClick}>Budget Buddy</a>
       <nav className="flex gap-8">
-        <a className="p-2 hover:bg-primary-shade duration-300  ease-in rounded-xl">
-          Payment List
-        </a>
-        <a className="p-2 hover:bg-primary-shade duration-300  ease-in rounded-xl">
-          Assets
-        </a>
-        <a className="p-2 hover:bg-primary-shade duration-300  ease-in rounded-xl">
-          Plan
-        </a>
-        <a className="p-2 hover:bg-primary-shade duration-300  ease-in rounded-xl">
-          Coupons
-        </a>
-        <a className="p-2 hover:bg-primary-shade duration-300  ease-in rounded-xl">
-          Blog
-        </a>
+        <a className="header-nav-a">Payment List</a>
+        <a className="header-nav-a">Assets</a>
+        <a className="header-nav-a">Plan</a>
+        <a className="header-nav-a">Coupons</a>
+        <a className="header-nav-a">Blog</a>
       </nav>
       <div
         className=""
@@ -52,15 +42,14 @@ function Header({ headerRef, username }) {
         onMouseLeave={() => setShowMenu(false)}
       >
         <a>{username && `Hello, ${username}!`}</a>
-
         <div
           className={`absolute flex flex-col bg-primary right-0 transition-all duration-300 overflow-hidden ${
             showMenu ? 'h-40 pt-6 visible' : 'h-0 invisible'
           }`}
         >
-          <a className="px-12 py-4 hover:bg-primary-shade "> Settings</a>
+          <a className="px-12 py-4 hover:bg-primary-shade"> Settings</a>
           <a
-            className="px-12 py-4 hover:bg-primary-shade "
+            className="px-12 py-4 hover:bg-primary-shade"
             onClick={handleLogout}
           >
             Logout

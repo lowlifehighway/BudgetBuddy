@@ -32,7 +32,6 @@ function BudgetItem({ payment_data }) {
                 } text-white px-3 flex gap-1 items-center rounded-md`}
               >
                 {paidDate ? 'Done' : isOverdue ? 'Overdue' : 'Due'}
-                {/* {isOverdue ? 'Overdue' : 'Due'} */}
               </li>
               <span className="text-sm">
                 Due Date: {dueDate.toDateString()}

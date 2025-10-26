@@ -53,12 +53,12 @@ function App() {
   const updateLayout = () => {
     if (!headerRef.current || !topOfListRef.current) return;
 
-    const headerHeight = headerRef.current.clientHeight;
+    const headerHeight = headerRef.current.clientHeight + 16;
     const topOfList = topOfListRef.current.getBoundingClientRect().top;
 
     setLayout({
       topPad: `${headerHeight}px`,
-      listHeight: `calc(100vh - ${topOfList}px)`,
+      listHeight: `calc(${window.innerHeight - topOfList - headerHeight}px)`,
     });
   };
 
@@ -69,7 +69,7 @@ function App() {
     return () => window.removeEventListener('resize', updateLayout);
   }, []);
 
-  // function for filtered payments
+  // for filtered payments
   const filteredPayments = paymentData
     .filter((item) =>
       item.payment_name?.toLowerCase().includes(search.toLowerCase())
@@ -84,11 +84,11 @@ function App() {
     <>
       <div className="relative h-screen overflow-hidden cursor-default">
         <Header headerRef={headerRef} username={userData?.first_name} />
-        <div className="grid grid-cols-[25%_75%] pt-4">
+        <div className="grid grid-cols-[25%_75%]">
           <Main
-            layout={layout}
             paymentData={filteredPayments}
             topOfListRef={topOfListRef}
+            layout={layout}
             search={search}
             setSearch={setSearch}
             activeStatus={activeStatus}
@@ -105,5 +105,4 @@ function App() {
     </>
   );
 }
-
 export default App;
